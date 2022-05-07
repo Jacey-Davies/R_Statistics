@@ -1,0 +1,49 @@
+---
+title: "R Assignment 1"
+author: "Jacey Davies"
+date: "9/3/2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Generating the data:
+
+```{r seed}
+set.seed(21825314)
+mydata=rnorm(100,30,2)
+```
+
+Finding the sample mean:
+
+```{r mean}
+mean(mydata)
+```
+
+Finding the sample median:
+
+```{r median}
+as.numeric(quantile(mydata, probs=0.5))
+```
+
+Finding the 10% trimmed mean:
+
+```{r trim}
+mean(mydata, trim=0.1)
+```
+
+Finding the 35th percentile:
+
+```{r percent}
+as.numeric(quantile(mydata, probs=0.35))
+```
+
+Plotting the data as a histogram:
+
+```{r histo}
+hist(mydata, xlim=c(24,34), xlab="Value", ylab="Frequency", main="Histogram for Generated Data")
+```
+
+The histogram appears to be skewed left.
